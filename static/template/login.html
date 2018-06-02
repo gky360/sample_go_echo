@@ -1,0 +1,21 @@
+{{define "login"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <form action="/login" method="post">
+      {{if ne .ErrorMessage ""}}
+      <p>{{.ErrorMessage}}</p>
+      {{end}}
+      <p>UserId</p>
+      <p><input type="text" name="userId" value="{{.UserId}}"></p>
+      <p>Password</p>
+      <p><input type="password" name="password" value="{{.Password}}"></p>
+      <p><input type="submit" value="Login"></p>
+    </form>
+  </body>
+</html>
+{{end}}
